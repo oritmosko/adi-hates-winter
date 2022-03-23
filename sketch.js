@@ -18,7 +18,7 @@ function draw() {
   const dstMs = new Date('March 25, 2022 02:00:00').getTime();
   const timeleft = dstMs - nowMs;
 
-  if (timeleft  0) {
+  if (timeleft > 0) {
     background(beforeSummerImage);
     push();
     textAlign(CENTER);
