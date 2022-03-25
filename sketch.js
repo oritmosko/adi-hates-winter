@@ -7,6 +7,7 @@ function preload() {
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
+  canvas.style('z-index', '-1');
 }
 
 function windowResized() {
@@ -30,6 +31,13 @@ function draw() {
     pop();
   } else {
     push();
+    translate(width / 2, height / 2);
+    rotate(radians(frameCount));
+    imageMode(CENTER);
+    image(afterSummerImage, 0, 0);
+    pop();
+
+    push();
     textAlign(CENTER);
     textStyle(BOLDITALIC);
     textFont("monospace", 48);
@@ -39,11 +47,6 @@ function draw() {
     text('SUMMERRRRR!!!', windowWidth / 2, 20, windowWidth);
     text('SUMMERRRRR!!!', windowWidth / 2, height - 60, windowWidth);
     pop();
-
-    translate(width / 2, height / 2);
-    rotate(radians(frameCount));
-    imageMode(CENTER);
-    image(afterSummerImage, 0, 0);
   }
 }
 
